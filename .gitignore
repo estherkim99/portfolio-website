@@ -1,0 +1,4 @@
+*.pyc
+env/
+*.DS_STORE
+portfolio_api/db.sqlite3
