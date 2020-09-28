@@ -1,4 +1,6 @@
 *.pyc
 env/
+venv/
 *.DS_STORE
 portfolio_api/db.sqlite3
+.env
