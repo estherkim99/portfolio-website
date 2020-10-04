@@ -24,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
     'estherkim99-portfolio-api.herokuapp.com',
     '127.0.0.1',
-    'localhost'
+    'localhost',
 ]
 
 
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'contents',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +133,7 @@ STATIC_URL = '/static/'
 #location where django collect all static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project_name/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'portfolio_api/static')]
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
