@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from contents.models import PersonalProject, AcademicProject, Keyword, TechStack, StackCategory, \
-    Course, School, Work, Location
+    Course, School, Work, Location, Leadership
 
 
 class StackCategorySerializer(serializers.ModelSerializer):
@@ -69,6 +69,14 @@ class AcademicProjectSerializer(BaseProjectSerializer):
 class WorkSerializer(serializers.ModelSerializer):
     location = LocationSerializer()
     stack = StackSerializer(many=True)
+
+    class Meta:
+        model = Work
+        fields = '__all__'
+
+class LeadershipSerializer(serializers.ModelSerializer):
+    location = LocationSerializer()
+    keywords = KeywordSerializer(many=True)
 
     class Meta:
         model = Work

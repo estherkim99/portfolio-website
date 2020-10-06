@@ -190,3 +190,19 @@ class WorkProject(BaseProject):
 
     class Meta:
         db_table = 'work_projects'
+
+
+class Leadership(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    location = models.ForeignKey(
+        Location, null=True,  on_delete=models.PROTECT)
+    roles = models.JSONField(default=dict)
+    keywords = models.ManyToManyField(Keyword, blank=True)
+    description = models.TextField(null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'leaderships'

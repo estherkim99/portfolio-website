@@ -1,7 +1,7 @@
 from django.http import JsonResponse
-from contents.models import Work, School, AcademicProject, PersonalProject, Course
+from contents.models import Work, School, AcademicProject, PersonalProject, Course, Leadership, StackCategory
 from contents.serializers import AcademicProjectSerializer, PersonalProjectSerializer, CourseSerializer, \
-    SchoolSerializer, WorkSerializer
+    SchoolSerializer, WorkSerializer, LeadershipSerializer
 
 
 def index_work(request):
@@ -25,3 +25,15 @@ def index_projects(request):
     personal = PersonalProjectSerializer(
         PersonalProject.objects.all(), many=True).data
     return JsonResponse({'projects': {'academic': academic, 'personal': personal}})
+
+def index_leaderships(request):
+    leadership = LeadershipSerializer(Leadership.objects.all(), many=True).data
+    return JsonResponse({'leadership': leadership})
+
+
+def index_skills(request):
+    objs = StackCategory.objects.all()
+    stacks = dict()
+    for obj in objs:
+        stacks[obj.name] = [s.name for s in obj.techstack_set.all()]
+    return JsonResponse({'skills': stacks})
