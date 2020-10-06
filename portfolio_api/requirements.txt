@@ -3,3 +3,4 @@ djangorestframework==3.11.*
 dj-database-url
 django-heroku
 gunicorn
+django-cors-headers
