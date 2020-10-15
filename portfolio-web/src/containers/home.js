@@ -2,17 +2,14 @@ import React from "react";
 import Links from "../components/links";
 import Button from "react-bootstrap/Button";
 import mainPhoto from "../static/undraw_dev_focus_b9xo.svg";
+import { homeTexts } from "../content";
 
 export default function Home() {
   return (
     <>
       <div className="home">
-        <img src={mainPhoto} alt="main"/>
-        <h2>
-          I'm an aspiring software engineer studying computer science at Brown
-          University, with interests in machine learning, image
-          processing, and web development.
-        </h2>
+        <img src={mainPhoto} alt="main" />
+        <h2>{homeTexts.intro}</h2>
         <div className="buttons">
           {/* <Button variant="custom" href="/about">
             About me

@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { cvTexts, apiInfo } from "../content";
 
 export default class CV extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class CV extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://estherkim99-portfolio-api.herokuapp.com/contents/schools", {
+    fetch(apiInfo.domain + "/contents/schools", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -28,7 +29,7 @@ export default class CV extends React.Component {
       .catch((err) => {
         console.log(err);
       });
-    fetch("https://estherkim99-portfolio-api.herokuapp.com/contents/works", {
+    fetch(apiInfo.domain + "/contents/works", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -40,12 +41,9 @@ export default class CV extends React.Component {
       .catch((err) => {
         console.log(err);
       });
-    fetch(
-      "https://estherkim99-portfolio-api.herokuapp.com/contents/leaderships",
-      {
-        method: "GET",
-      }
-    )
+    fetch(apiInfo.domain + "/contents/leaderships", {
+      method: "GET",
+    })
       .then((response) => response.json())
       .then((response) => {
         this.setState({
@@ -55,7 +53,7 @@ export default class CV extends React.Component {
       .catch((err) => {
         console.log(err);
       });
-    fetch("https://estherkim99-portfolio-api.herokuapp.com/contents/skills", {
+    fetch(apiInfo.domain + "/contents/skills", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -85,6 +83,9 @@ export default class CV extends React.Component {
     return (
       <>
         <Container fluid className="container">
+          <Row className="justify-content-center">
+            <p>{cvTexts.note}</p>
+          </Row>
           <Row className="justify-content-center">
             <Button
               onClick={scrollToSchool}

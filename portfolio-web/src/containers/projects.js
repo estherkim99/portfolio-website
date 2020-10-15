@@ -4,6 +4,7 @@ import CardColumns from "react-bootstrap/CardColumns";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import { projectTexts, apiInfo } from "../content";
 
 export default class Project extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class Project extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://estherkim99-portfolio-api.herokuapp.com/contents/projects", {
+    fetch(apiInfo.domain + "/contents/projects", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -45,6 +46,9 @@ export default class Project extends React.Component {
       <>
         <Container fluid className="container">
           <Row className="justify-content-center">
+            <p>{projectTexts.note}</p>
+          </Row>
+          <Row className="justify-content-center">
             <Button
               onClick={scrollToPersonal}
               variant="light"
@@ -61,11 +65,9 @@ export default class Project extends React.Component {
             </Button>
           </Row>
           <Row className="justify-content-center">
-            <p>
-              Please contact me at estherkim1721@gmail.com for access to private
-              github repositories.
-            </p>
+            <p>{projectTexts.intro}</p>
           </Row>
+
           <Row ref={this.personalRef}>
             <h2>Personal Projects</h2>
           </Row>
