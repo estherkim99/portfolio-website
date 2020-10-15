@@ -7,15 +7,12 @@ const socialMediaLinks = {
 
 const homeTexts = {
   intro:
-    "I'm an aspiring software engineer studying computer science at \
-    Brown University, with interests in machine learning, \
-    image processing, and web development.",
+    "I'm an aspiring software engineer studying computer science at Brown University, with interests in machine learning, image processing, and web development.",
 };
 
 const projectTexts = {
   intro:
-    "Please contact me at estherkim1721@gmail.com for access to private \
-  github repositories.",
+    "Please contact me at estherkim1721@gmail.com for access to private github repositories.",
   note: "Please give this page a second to load, the server is free and slow..",
 };
 
