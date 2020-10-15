@@ -47,7 +47,7 @@ export default class CV extends React.Component {
       .then((response) => response.json())
       .then((response) => {
         this.setState({
-          leaderships: response.leaderships,
+          leaderships: response.leadership,
         });
       })
       .catch((err) => {
@@ -101,13 +101,13 @@ export default class CV extends React.Component {
             >
               Experiences
             </Button>
-            {/* <Button
+            <Button
               onClick={scrollToLead}
               variant="light"
               className="scroll-button"
             >
               Activities and Leaderships
-            </Button> */}
+            </Button>
             <Button
               onClick={scrollToSkill}
               variant="light"
@@ -194,8 +194,37 @@ export default class CV extends React.Component {
               );
             })}
           <Row ref={this.leadRef}>
-            {/* <h2>Activities and Leaderships</h2> */}
+            <h2>Activities and Leaderships</h2>
           </Row>
+          {this.state.leaderships &&
+            this.state.leaderships.map((leadership) => {
+              let description = leadership.description
+                .split("\n")
+                .map((d, index) => {
+                  return <li key={index}>{d}</li>;
+                });
+              let roles = leadership.roles.roles.map((r, index) => {
+                return <li key={index}>{r.name}</li>;
+              });
+              return (
+                <Row key={leadership.id}>
+                  <Card style={{ width: "100%" }}>
+                    <Card.Body style={{ padding: "20px" }}>
+                      <Card.Title>{leadership.name}</Card.Title>
+                      <Card.Subtitle className="text-muted">
+                        <ul>{roles}</ul>
+                      </Card.Subtitle>
+                      <p>{description}</p>
+                    </Card.Body>
+                    <Card.Footer
+                      style={{ fontSize: "small", textAlign: "right" }}
+                    >
+                      {leadership.location.city} , {leadership.location.country}
+                    </Card.Footer>
+                  </Card>
+                </Row>
+              );
+            })}
           <Row ref={this.skillRef}>
             <h2>Skills</h2>
           </Row>
