@@ -79,5 +79,5 @@ class LeadershipSerializer(serializers.ModelSerializer):
     keywords = KeywordSerializer(many=True)
 
     class Meta:
-        model = Work
+        model = Leadership
         fields = '__all__'
