@@ -3,6 +3,7 @@
 
 ## Demo
 ~Website published at [estherkim99.github.io](estherkim99.github.io) using GitHub Pages and API published at [estherkim99-portfolio-api.herokuapp.com](estherkim99-portfolio-api.herokuapp.com) with Heroku~
+
 This project is no longer hosted due to server costs. The Github Pages link above [estherkim99.github.io](estherkim99.github.io) hosts a different version of my portfolio website though, so make sure to check that out!
 
 Below is the demo of this project from the time when this website was still online.
