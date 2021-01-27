@@ -12,6 +12,7 @@ Click the image below to see the demo of this project from the time when this we
 ## Inspiration and Purpose of this Project
 As a student seeking for job opportunities in software engineering, I came to realize the importance of showcasing my work. However, those who may not be familiar with web development may have a hard time developing website or have to spend significant sum of money for website editor solutions.
 Therefore, I decided to make a website generator template, with which you would only have to edit the contents using Django Admin and fill in other information like intros, announcements in a json file.
+While I also believe that there are lot of other technologies you can use to easily create a personal website or blog, I still worked on this project so that I could practice Django api development and deployment on Heroku!
 
 ## Technology
 This project consisted of two parts - 1. building the front-end interface, 2. building a Django-based API for editing contents to be uploaded on the resume website.
