@@ -6,7 +6,7 @@
 
 This project is no longer hosted due to server costs. The Github Pages link above [estherkim99.github.io](estherkim99.github.io) hosts a different version of my portfolio website though, so make sure to check that out!
 
-Below is the demo of this project from the time when this website was still online.
+Click the image below to see the demo of this project from the time when this website was still online on Youtube.
 [![Demo](https://img.youtube.com/vi/PptIs-tXn6w/maxresdefault.jpg)](https://youtu.be/PptIs-tXn6w)
 
 ## Inspiration and Purpose of this Project
